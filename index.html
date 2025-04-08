@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jack & Anite Flipbook</title>
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.8/dist/js/page-flip.browser.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/page-flip@2.0.8/dist/css/page-flip.min.css">
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #f0f0f0;
+    }
+    #flipbook {
+      width: 100%;
+      height: 100vh;
+    }
+    .page {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="flipbook"></div>
+
+  <script>
+    const images = [
+      "20th_anniversary_Jack_Anite_highres.jpg",
+      "6NEXF0i9XQEaZc7S.png",
+      "Eo4aAnED420Y47a2.png",
+      "SMh9AkkXVQBZegPN.png",
+      "BK9SMuXuFbuLJWdfeWfcqp.png",
+      "20th_anniversary_ANITE_highres.jpg",
+      "7299dT1ir4ffBVXN8XF6BT.png",
+      "final_page_JACK_AND_ANITE_highres.jpg"
+    ];
+
+    const container = document.getElementById("flipbook");
+    const flipbook = new St.PageFlip(container, {
+      width: 800,
+      height: 1130,
+      size: "stretch",
+      minWidth: 315,
+      maxWidth: 1000,
+      minHeight: 400,
+      maxHeight: 1350,
+      maxShadowOpacity: 0.5,
+      showCover: false,
+      mobileScrollSupport: true
+    });
+
+    flipbook.loadFromImages(images.map(name => `./${name}`));
+  </script>
+</body>
+</html>
